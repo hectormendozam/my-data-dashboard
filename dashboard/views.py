@@ -6,6 +6,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from django.urls import reverse # Importar reverse
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
 
 import random # Se mantiene solo para añadir un ligero factor de variabilidad en las métricas heurísticas
 
@@ -202,6 +204,7 @@ def analyze_dataset(file_obj, filename="dataset.csv"):
 class DashboardView(TemplateView):
     """Renderiza la plantilla principal del dashboard."""
     template_name = "dashboard/dashboard.html"
+
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -210,6 +213,8 @@ class DashboardView(TemplateView):
         
         return context
     
+@method_decorator(csrf_exempt, name='dispatch')
+
 class DatasetUploadView(APIView):
     """Maneja la subida del archivo y ejecuta el análisis real."""
     
