@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'clave123')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False') == 'True' 
 
-ALLOWED_HOSTS = ['127.0.0.1', '.render.com'] 
+ALLOWED_HOSTS = ['127.0.0.1', '.onrender.com'] 
 if 'WEB_HOST' in os.environ:
     ALLOWED_HOSTS.append(os.environ['WEB_HOST'])
 

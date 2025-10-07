@@ -8,6 +8,8 @@ from rest_framework import status
 from django.urls import reverse # Importar reverse
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
+from rest_framework.views import APIView # Asegúrate de que esta esté importada
+
 
 import random # Se mantiene solo para añadir un ligero factor de variabilidad en las métricas heurísticas
 
