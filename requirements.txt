@@ -1,0 +1,7 @@
+Django
+djangorestframework
+pandas
+numpy
+gunicorn  # Servidor WSGI para producción
+dj-database-url # Para manejar la conexión a PostgreSQL de Render
+psycopg2-binary # Adaptador de PostgreSQL
